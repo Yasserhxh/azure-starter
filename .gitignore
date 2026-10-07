@@ -1,0 +1,68 @@
+## .NET / Visual Studio
+bin/
+obj/
+out/
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+*.user
+*.suo
+*.userprefs
+.vs/
+.vscode/*
+!.vscode/extensions.json
+!.vscode/launch.json.sample
+*.swp
+
+## Rider / JetBrains
+.idea/
+*.sln.iml
+
+## Test / coverage
+[Tt]est[Rr]esult*/
+coverage/
+*.coverage
+*.coverlet.json
+TestResults/
+
+## .NET local tools restore marker is kept; tool binaries are not
+# (.config/dotnet-tools.json IS committed)
+
+## User secrets never hit the repo (dev secrets live in the secret store)
+secrets.json
+appsettings.*.Local.json
+*.Development.local.json
+
+## Environment / secrets
+.env
+.env.*
+!.env.example
+
+## Node / web
+node_modules/
+dist/
+.vite/
+*.local
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+## Flutter / Dart
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+build/
+*.g.dart
+*.freezed.dart
+
+## Azure / infra
+*.azurePubxml
+*.publishsettings
+.azure/
+
+## OS
+.DS_Store
+Thumbs.db

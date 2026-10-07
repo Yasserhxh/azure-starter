@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "permissions": {
+    "allow": [
+      "Bash(dotnet build:*)",
+      "Bash(dotnet test:*)",
+      "Bash(dotnet restore:*)",
+      "Bash(dotnet format:*)",
+      "Bash(dotnet run:*)",
+      "Bash(dotnet ef:*)",
+      "Bash(dotnet tool restore:*)",
+      "Bash(dotnet sln:*)",
+      "Bash(dotnet new:*)",
+      "Bash(npm ci:*)",
+      "Bash(npm run:*)",
+      "Bash(npx vitest:*)",
+      "Bash(npx playwright:*)",
+      "Bash(az bicep build:*)",
+      "Bash(az bicep lint:*)",
+      "Bash(git status:*)",
+      "Bash(git diff:*)",
+      "Bash(git log:*)",
+      "Bash(git branch:*)"
+    ],
+    "deny": [
+      "Read(**/.env)",
+      "Read(**/.env.local)",
+      "Read(**/*.env.local)",
+      "Read(**/secrets.json)",
+      "Read(**/appsettings.*.Local.json)",
+      "Read(**/*.pfx)",
+      "Read(**/*.pem)",
+      "Bash(dotnet user-secrets list:*)"
+    ],
+    "ask": [
+      "Bash(npm install:*)",
+      "Bash(git add:*)",
+      "Bash(git push:*)",
+      "Bash(git commit:*)",
+      "Bash(az deployment:*)",
+      "Bash(az login:*)"
+    ]
+  }
+}

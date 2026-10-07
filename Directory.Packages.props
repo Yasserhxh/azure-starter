@@ -1,0 +1,28 @@
+<Project>
+
+  <!--
+    Central Package Management (CPM) — the single source of truth for NuGet
+    versions across the solution. Projects reference packages with
+    <PackageReference Include="X" /> (no Version attribute); the version is
+    resolved from the <PackageVersion> entries below.
+
+    Policy (see ~/.claude/CLAUDE.md): every version is pinned and verified
+    against current docs before it is added. Entries are introduced per phase
+    as packages are actually referenced — not seeded ahead of use — so the
+    build never pins a version that isn't exercised.
+
+    Phase 1 (skeleton) references no external packages. Entries will be added
+    in Phase 2 (BuildingBlocks/architecture tests), Phase 3 (Identity/Entra),
+    Phase 4 (observability), etc.
+  -->
+
+  <PropertyGroup>
+    <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+    <CentralPackageTransitivePinningEnabled>true</CentralPackageTransitivePinningEnabled>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- Package versions are added here as each phase introduces them. -->
+  </ItemGroup>
+
+</Project>

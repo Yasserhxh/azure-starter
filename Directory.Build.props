@@ -1,0 +1,49 @@
+<Project>
+
+  <!--
+    Solution-wide build settings. Applied to every project unless overridden.
+    Security > correctness > clarity > performance. Warnings are errors so the
+    build gate in CI stays meaningful. See docs/decisions for rationale.
+  -->
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <LangVersion>14.0</LangVersion>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+
+    <!-- Quality gate -->
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+    <EnableNETAnalyzers>true</EnableNETAnalyzers>
+    <AnalysisLevel>latest-recommended</AnalysisLevel>
+    <CodeAnalysisTreatWarningsAsErrors>true</CodeAnalysisTreatWarningsAsErrors>
+
+    <!-- Reproducible, debuggable builds -->
+    <Deterministic>true</Deterministic>
+    <ContinuousIntegrationBuild Condition="'$(CI)' == 'true'">true</ContinuousIntegrationBuild>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+
+    <!-- Central package management: versions live in Directory.Packages.props -->
+    <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+
+    <!-- Project-level metadata -->
+    <Product>TodoApp</Product>
+    <Company>TodoApp</Company>
+    <NeutralLanguage>en</NeutralLanguage>
+    <!--
+      InvariantGlobalization is intentionally NOT set to true: this is a user-facing app
+      with ASP.NET Core Identity (display names, emails, localized validation) where
+      culture-sensitive string comparison and formatting matter. Revisit only with a reason.
+    -->
+  </PropertyGroup>
+
+  <!--
+    CS1591 (missing XML doc comment) is noisy for internal/sample code.
+    Public Contracts projects re-enable it to keep the module API documented.
+  -->
+  <PropertyGroup>
+    <NoWarn>$(NoWarn);CS1591</NoWarn>
+  </PropertyGroup>
+
+</Project>

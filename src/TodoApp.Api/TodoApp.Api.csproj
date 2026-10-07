@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <!--
+    Deployable host: composition root for the modular monolith. Each module
+    plugs in via its AddXxxModule()/MapXxxModule() pair so this project stays a
+    thin shell. BFF, SignalR hub, middleware, and observability are added in
+    later phases (see docs/architecture/overview.md and template-prompt phases).
+  -->
+
+  <PropertyGroup>
+    <UserSecretsId>todoapp-api</UserSecretsId>
+  </PropertyGroup>
+
+</Project>
